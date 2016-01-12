@@ -1,0 +1,25 @@
+{% if include.resource.folder %}
+    <li>
+        {% if include.resource.file %}
+            <a href="{{buildPath}}.html">
+                <strong>{{ include.resource.name }}</strong>
+            </a>
+        {% else %}
+            <strong>{{ include.resource.name }}</strong>
+        {% endif %}
+
+    </li>
+    <ul>
+        {% for child in include.resource.children %}
+            {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
+            {% include nested.html resource=child pathprefix=buildPath  %}
+        {% endfor %}
+    </ul>
+{% else %}
+    {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
+    <li>
+        <a href="{{buildPath}}.html">
+            <em>{{ include.resource.name }}</em>
+        </a>
+    </li>
+{% endif %}
