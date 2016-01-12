@@ -1,0 +1,7 @@
+# attention : non testé pour le moment, travail de build/deploiement auto en cours
+
+language: bash
+
+script:
+  - bash 1_process.sh
+#  - bash 2_push.sh
