@@ -36,11 +36,15 @@ table th {text-align: center; background-color: #ddd;}
   top: 0;
   left: 0;
   width: 100%;
-  height: 110px;
+  height: 60px;
   overflow: hidden;
   padding: 10px;
-  background: url(../img/site/title.png) no-repeat 10px 20px #fff;
   border-bottom: 1px solid #ddd;
+  background-color: #f5f3e7;
+}
+
+#header img {
+  max-height: 100%;
 }
 
 /* Hide the text (for SEO only) */
@@ -71,10 +75,11 @@ table th {text-align: center; background-color: #ddd;}
 
 #nav {
   position:fixed;
-  top:130px;
+  top:60px;
   left:0px;
   padding:10px;
-  width:200px;
+  max-width:200px;
+
 }
 
 #nav h1 {margin-top: 0; margin-left: 0;}
@@ -136,12 +141,10 @@ table th {text-align: center; background-color: #ddd;}
 
 
 #content {
-  margin: 20px;
-  margin-top: 120px;
-  margin-left: 230px;
+  margin: 60px auto 20px auto;
   padding: 20px;
-  border-left: 1px solid #ddd;
   height: 100%;
+  overflow: hidden;
 }
 
 #content table th, table td {white-space: normal;}
