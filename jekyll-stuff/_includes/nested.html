@@ -1,3 +1,5 @@
+{% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
+
 {% if include.resource.folder %}
     <li>
         {% if include.resource.file %}
@@ -10,13 +12,27 @@
 
     </li>
     <ul>
-        {% for child in include.resource.children %}
-            {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
-            {% include nested.html resource=child pathprefix=buildPath  %}
-        {% endfor %}
+        {% if include.resource.autoparse %}
+            {% for file in site.files %}
+                {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}/{% endcapture %}
+                {% capture filePath %}/{{file}}{% endcapture %}
+                {% if filePath contains buildPath %}
+                    <li>
+                        <a href="{{filePath}}.html">
+                            <em>{{ filePath | replace: buildPath, '' }}</em>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for child in include.resource.children %}
+                {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
+                {% include nested.html resource=child pathprefix=buildPath  %}
+            {% endfor %}
+        {% endif %}
+
     </ul>
 {% else %}
-    {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
     <li>
         <a href="{{buildPath}}.html">
             <em>{{ include.resource.name }}</em>

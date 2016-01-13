@@ -9,22 +9,5 @@
     {% include nested.html resource=res pathprefix="" %}
     {% endfor %}
   </ul>
-  <!--{% if site.files and site.files != empty %}-->
-  <!--<ul>-->
-  <!--{% for file in site.files %}-->
-  <!--<li>-->
-
-  <!--{% capture file_in_loop %}{{ file }}.html{% endcapture %}-->
-
-  <!--{% if relative_page_url == file_in_loop %}-->
-  <!--<span class="current">{{ file | upcase }}</span>-->
-  <!--{% else %}-->
-  <!--<a href="{{ basehref }}{{ file_in_loop }}">{{ file | upcase }}</a>-->
-  <!--{% endif %}-->
-
-  <!--</li>-->
-  <!--{% endfor %}-->
-  <!--</ul>-->
-  <!--{% endif %}-->
 
 </div>
