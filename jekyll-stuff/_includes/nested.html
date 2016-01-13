@@ -1,40 +1,45 @@
 {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
-
+{% capture checkPath %}{{buildPath}}.html{% endcapture %}
+{% capture liClass %}
+    {% if page.url == checkPath %}
+        current
+    {% endif %}
+{% endcapture %}
 {% if include.resource.folder %}
-    <li>
+    <li class="{{liClass}} section">
         {% if include.resource.file %}
-            <a href="{{buildPath}}.html">
-                <strong>{{ include.resource.name }}</strong>
+            <a href="{{buildPath}}.html"  >
+                <span class=" hint--bounce hint--right" data-hint="{{include.resource.hover}}">{{ include.resource.name }}</span>
             </a>
         {% else %}
-            <strong>{{ include.resource.name }}</strong>
+            <span class=" hint--bounce hint--right" data-hint="{{include.resource.hover}}">{{ include.resource.name }}</span>
         {% endif %}
-
-    </li>
-    <ul>
-        {% if include.resource.autoparse %}
+        <ul>
+            {% if include.resource.autoparse %}
             {% for file in site.files %}
-                {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}/{% endcapture %}
-                {% capture filePath %}/{{file}}{% endcapture %}
-                {% if filePath contains buildPath %}
-                    <li>
-                        <a href="{{filePath}}.html">
-                            <em>{{ filePath | replace: buildPath, '' }}</em>
-                        </a>
-                    </li>
-                {% endif %}
+            {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}/{% endcapture %}
+            {% capture filePath %}/{{file}}{% endcapture %}
+            {% if filePath contains buildPath %}
+            <li>
+                <a href="{{filePath}}.html">
+                    <em>{{ filePath | replace: buildPath, '' }}</em>
+                </a>
+            </li>
+            {% endif %}
             {% endfor %}
-        {% else %}
+            {% else %}
             {% for child in include.resource.children %}
-                {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
-                {% include nested.html resource=child pathprefix=buildPath  %}
+            {% capture buildPath %}{{include.pathprefix}}/{{include.resource.path}}{% endcapture %}
+            {% include nested.html resource=child pathprefix=buildPath  %}
             {% endfor %}
-        {% endif %}
+            {% endif %}
 
-    </ul>
+        </ul>
+    </li>
+
 {% else %}
-    <li>
-        <a href="{{buildPath}}.html">
+    <li class="{{liClass}}">
+        <a href="{{buildPath}}.html" class="hint--bounce hint--right" data-hint="{{include.resource.hover}}">
             <em>{{ include.resource.name }}</em>
         </a>
     </li>

@@ -1,12 +1,10 @@
 
 <div id="nav">
 
-  <h1>Navigation</h1>
-
   {% capture relative_page_url %}{{ page.url | replace_first:'/', '' }}{% endcapture %}
   <ul>
     {% for res in site.data.structure %}
-    {% include nested.html resource=res pathprefix="" %}
+      {% include nested.html resource=res pathprefix="" %}
     {% endfor %}
   </ul>
 
