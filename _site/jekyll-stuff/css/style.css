@@ -1,3 +1,5 @@
+* {font-family: Arial;}
+
 a, a:visited, a:active, a:hover {color: #555;}
 
 table {border-collapse: collapse;}
@@ -13,10 +15,6 @@ table th {text-align: center; background-color: #ddd;}
 .message.info {border: 1px solid #44b; background-color: #cce;}
 .message.warning {border: 1px solid #bb4; background-color: #eec;}
 .message.error {border: 1px solid #b44; background-color: #ecc;}
-
-body {
-  font-family: sans-serif;
-}
 
 
 /* GitHub Markdown : add specific style */
@@ -39,7 +37,7 @@ body {
   left: 0;
   width: 100%;
   height: 60px;
-  overflow: visible;
+  overflow: hidden;
   padding: 10px;
   border-bottom: 1px solid #ddd;
   background-color: #f5f3e7;
@@ -85,8 +83,7 @@ body {
 }
 
 #nav > ul {
-  margin-left: 5px;
-  margin-right: auto;
+  margin-left: 0;
   padding-left: 0;
 }
 
@@ -157,7 +154,6 @@ body {
   padding: 20px;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(0, 195, 253, 0.02);
 }
 
 #content table th, table td {white-space: normal;}
