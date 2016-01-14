@@ -1,8 +1,11 @@
 ---
 permakink : /css/main.css
 ---
-@import "theme";
+@import "vars";
 @import "fonts";
 @import "hint";
+@import "content";
+@import "nav";
+@import "header";
 @import "style";
-@import "github-markdown";
+//@import "github-markdown";
