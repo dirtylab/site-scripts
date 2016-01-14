@@ -8,13 +8,8 @@
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
-  padding:0 10px;
-  @media(max-width: 1395px) {
-    margin-left: 200px;
-  }
-  @media(max-width:799px) {
-    margin-left:0;
-  }
+  padding:0 15px;
+
   height: 100%;
   overflow: hidden;
   background-color: $content_background;
@@ -27,6 +22,12 @@
     min-width: $nav-width;
     max-width: $content_max_width;
     margin: $top-height auto 0;
+    @media(max-width: 1395px) {
+      margin-left: 200px;
+    }
+    @media(max-width:799px) {
+      margin-left:0;
+    }
     padding: 45px;
   }
 

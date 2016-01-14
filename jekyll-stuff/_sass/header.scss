@@ -4,7 +4,7 @@
   z-index: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   top: 0;
   left: 0;
   width: 100%;
@@ -47,6 +47,18 @@
         }
         @media (max-width:514px) {
           display: none;
+        }
+      }
+    }
+    @media (min-width: 1100px) {
+      top:$top-height;
+      position: fixed;
+      right: 5px;
+      height: auto;
+      li {
+        display:  flex;
+        img {
+          height: 50px;
         }
       }
     }
