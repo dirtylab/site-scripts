@@ -4,13 +4,9 @@ url: http://dirtylab.github.io/
 
 # for GitHub Flavored Markdown support
 # requires 'gem install redcarpet'
-markdown: kramdown
-kramdown:
-  auto_ids: true
-  input: GFM
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
 
 sass:
     sass_dir: _sass
