@@ -13,7 +13,7 @@ $error_color: #b44;
 $error_background: #ecc;
 
 $dashboard_background: rgb(244, 244, 254);
-$body_background_color: rgba(228, 240, 224, 0.48);
+$body_background_color: rgba(233, 245, 245, 0.48);
 
 $ahref_link_color: #808080;
 $ahref_color: #555;
@@ -26,9 +26,10 @@ $nav_big_sections_border: 7px solid $light_gray;
 
 $content_max_width:980px;
 $content_background: rgba(0, 0, 255, 0.03);
+$content_ahref_color: #a10000;
 
-$top-height:8vh;
-$bottom-height:92vh;
+$top-height:10vh;
+$bottom-height:90vh;
 
 //fonts
 $default_font: sans-serif;

@@ -15,6 +15,7 @@
   background-color: $dashboard_background;
   > a#logo {
     order:1;
+    background-color: white;
     > img {
       background-color: $body_background_color;
       box-sizing: border-box;

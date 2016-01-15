@@ -34,16 +34,17 @@
 
     {% include nav.html %}
 
-    <article id="content" class="markdown-body">
+    <article>
+      <div id="content" class="markdown-body">
 
-      {% comment %}
-        Jekyll does not allows simply {% include {{page.markdown_file }} %}
-        See http://stackoverflow.com/questions/7226076/in-jekyll-is-there-a-concise-way-to-render-a-markdown-partial
-      {% endcomment %}
+        {% comment %}
+          Jekyll does not allows simply {% include {{page.markdown_file }} %}
+          See http://stackoverflow.com/questions/7226076/in-jekyll-is-there-a-concise-way-to-render-a-markdown-partial
+        {% endcomment %}
 
-      {% capture md_content %}{% include {{page.markdown_file}} %}{% endcapture %}
-      {{md_content | markdownify}}
-
+        {% capture md_content %}{% include {{page.markdown_file}} %}{% endcapture %}
+        {{md_content | markdownify}}
+      </div>
     </article>
 
   </main>
