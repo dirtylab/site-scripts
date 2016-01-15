@@ -23,7 +23,21 @@ On doit donc avoir dans un dossier à part :
 * Déplacement des **.MD** dans **_include**
 * Création de **.html** à la racine (un pour chaque **.MD**) comportant les instructions de conversion de **Markdown** vers **HTML**
 * Ajout de templates header / footer / navigation / style (contenu du répertoire [jekyll-stuff](jekyll-stuff))
+* **Une option --prod lance le script pour la production**
 
 `2_push.sh`
 
 * Instructions **git** permettant le commit + push des traitements automatiques 
+
+## NPM + Grunt
+
+Npm est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
+le projet npm est définit dans `/client`.  
+`package.json` définit le projet et ses dépendances.  
+Grunt est un utilitaire de build très populaire!
+
+Pour installer npm (debian) :  
+`sudo apt-get install npm`
+
+Pour activer le projet npm :  
+Depuis le répertoire `client` : `npm install`
