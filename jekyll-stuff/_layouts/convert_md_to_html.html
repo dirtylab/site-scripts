@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div id="header">
+  <header id="header">
     <a href="/" id="logo">
       <img src="/img/site/title.png">
     </a>
@@ -23,13 +23,13 @@
       {% endfor %}
 
     </ul>
-  </div>
+  </header>
 
-  <div id="main">
+  <main id="main">
 
     {% include nav.html %}
 
-    <div id="content" class="markdown-body">
+    <article id="content" class="markdown-body">
 
       {% comment %}
         Jekyll does not allows simply {% include {{page.markdown_file }} %}
@@ -39,8 +39,8 @@
       {% capture md_content %}{% include {{page.markdown_file}} %}{% endcapture %}
       {{md_content | markdownify}}
 
-    </div>
+    </article>
 
-  </div>
+  </main>
 </body>
 </html>
