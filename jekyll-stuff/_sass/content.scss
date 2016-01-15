@@ -1,5 +1,5 @@
 
-
+$content_ahref_color: #a10000;
 #content {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -9,6 +9,15 @@
   line-height: 1.6;
   word-wrap: break-word;
   padding:0 15px;
+  a {
+    color:$content_ahref_color;
+    &:visited {
+      color:$content_ahref_color;
+    }
+    &:link {
+      color:$content_ahref_color;
+    }
+  }
 
   height: 100%;
   overflow: hidden;
