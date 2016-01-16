@@ -29,12 +29,14 @@ On doit donc avoir dans un dossier à part :
 
 * Instructions **git** permettant le commit + push des traitements automatiques 
 
-## NPM + Grunt
+## NPM + Bower + Grunt
 
 Npm est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
 le projet npm est définit dans `/client`.  
-`package.json` définit le projet et ses dépendances.  
-Grunt est un utilitaire de build très populaire!
+`package.json` définit le projet et ses dépendances.
+  
+**Bower** est un utilitaire similaire à npm, qui lui est 100% compatible, utilisé pour gérer les dépendances clients.
+**Grunt** est un utilitaire de build très populaire!
 
 Pour installer npm (debian) :  
 `sudo apt-get install npm`

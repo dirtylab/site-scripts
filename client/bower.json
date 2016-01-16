@@ -1,0 +1,21 @@
+{
+  "name": "dirtylab.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dirtylab/site-scripts",
+  "authors": [
+    "sveinburne <jrandolph@orange.fr>"
+  ],
+  "description": "Site statique de dirtylab",
+  "main": "./src/main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}

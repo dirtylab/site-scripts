@@ -24,8 +24,21 @@ module.exports = function (grunt) {
             jekyllServe: {
                 command: 'cd ../'+buildDir+' && jekyll serve'
             }
+        },
+
+        // grunt bower concatenator config
+        bower_concat : {
+            all : {
+                dest:"bundle/bundle.js",
+                cssDest:"bundle/bundle.css"
+            }
+
         }
     });
+
+
+    // Register grunt bower concatenator to bundle up one .js file
+    grunt.loadNpmTasks('grunt-bower-concat');
 
     // Register the grunt serve task
     grunt.registerTask('serve', [
@@ -34,9 +47,12 @@ module.exports = function (grunt) {
 
     // Register the grunt build task
     grunt.registerTask('build', [
+        'bower_concat:all',
         'shell:jekyllPrebuild',
         'shell:jekyllBuild'
     ]);
     // Register build as the default task fallback
     grunt.registerTask('default', 'build');
+
+
 };
