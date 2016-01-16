@@ -3,5 +3,5 @@
 language: bash
 
 script:
-  - bash 1_process.sh
+  - bash 1_process.sh --prod
 #  - bash 2_push.sh
