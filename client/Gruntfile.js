@@ -25,12 +25,22 @@ module.exports = function (grunt) {
                 command: 'cd ../'+buildDir+' && jekyll serve'
             }
         },
-
+        babel: {
+            options: {
+                sourceMap: true,
+                presets: ['es2015']
+            },
+            dist: {
+                files: {
+                    "build/dirtylab.js": "src/main.es6"
+                }
+            }
+        },
         // grunt bower concatenator config
         bower_concat : {
             all : {
-                dest:"bundle/bundle.js",
-                cssDest:"bundle/bundle.css"
+                dest:"build/bundle.js",
+                cssDest:"build/bundle.css"
             }
 
         }
@@ -47,6 +57,7 @@ module.exports = function (grunt) {
 
     // Register the grunt build task
     grunt.registerTask('build', [
+        'babel',
         'bower_concat:all',
         'shell:jekyllPrebuild',
         'shell:jekyllBuild'

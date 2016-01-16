@@ -3,8 +3,12 @@
   "description": "dirtylab.github.io",
   "version": "0.1.0",
   "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.4.3",
+    "babel-preset-es2015": "^6.3.13",
     "claymate": "^2.0.5",
     "grunt": "~0.4.5",
+    "grunt-babel": "^6.0.0",
     "grunt-bower-concat": "^0.6.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-shell": "^1.1.2",

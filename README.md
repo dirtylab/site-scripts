@@ -29,17 +29,19 @@ On doit donc avoir dans un dossier à part :
 
 * Instructions **git** permettant le commit + push des traitements automatiques 
 
-## NPM + Bower + Grunt
+## NPM + Bower + Grunt + Babel
 
-Npm est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
+[**Npm**](https://www.npmjs.com/) est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
 le projet npm est définit dans `/client`.  
 `package.json` définit le projet et ses dépendances.
   
-**Bower** est un utilitaire similaire à npm, qui lui est 100% compatible, utilisé pour gérer les dépendances clients.
-**Grunt** est un utilitaire de build très populaire!
+[**Bower**](http://bower.io/) est un utilitaire similaire à npm, qui lui est 100% compatible, utilisé pour gérer les dépendances clients.
+[**Grunt**](http://gruntjs.com/) est un utilitaire de build très populaire!
+[**Babel**](https://babeljs.io/) est un compilateur [ecmascript 6](http://es6-features.org) vers ecmascript 5.
 
 Pour installer npm (debian) :  
-`sudo apt-get install npm`
+`sudo apt-get install npm`  
 
 Pour activer le projet npm :  
-Depuis le répertoire `client` : `npm install`
+Depuis le répertoire `client` : `npm install`  
+

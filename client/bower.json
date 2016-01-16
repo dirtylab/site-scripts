@@ -6,7 +6,7 @@
     "sveinburne <jrandolph@orange.fr>"
   ],
   "description": "Site statique de dirtylab",
-  "main": "./src/main.js",
+  "main": "./src/main.es6",
   "license": "MIT",
   "ignore": [
     "**/.*",
