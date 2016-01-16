@@ -58,8 +58,8 @@ IFS=$'\n'
 for f in `find . -type f -regextype sed -regex ".*/.*\.\(MD\|md\)"`
 do
   # Links fixing
-  sed -i.bak -e 's/\([A-Za-z0-9._-]\{1,\}\)\.MD/\1.html/g' $f
-
+  php ../fix_links.php $f
+  
   # Emoji conversion
   php ../php_emojize/emojize.php $f
 

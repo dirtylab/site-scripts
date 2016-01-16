@@ -61,11 +61,7 @@ $content = preg_replace_callback('/['.
     unichr(0x2600).'-'.unichr(0x27BF).
   ']/u', function ($match) {
       
-      //echo "*** found '".$match[0]."'\n";
-      
       $unicode_image_name = strtolower(dechex(intval(uniord($match[0])))).'.png';
-      
-      //echo "*** unicode_image_name '".$unicode_image_name."'\n";
       
       return '<img class="emoji" src="'.EMOJI_PNG_ROOT.$unicode_image_name.'" height="20" width="20" align="absmiddle" />';
 
