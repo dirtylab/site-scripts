@@ -25,8 +25,10 @@ rm -rf _site
 
 git add .
 
-git config user.name "Travis-CI"
-git config user.email "travis@ci.com"
+git config user.name "$GH_USER"
+git config user.email "$GH_EMAIL"
+
+echo "GH_TOKEN = '$GH_TOKEN'"
 
 git commit -m "commit depuis Travis-CI (build number $TRAVIS_BUILD_NUMBER)"
 
