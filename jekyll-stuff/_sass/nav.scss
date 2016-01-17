@@ -1,5 +1,5 @@
 #nav {
-  > ul {
+  > ul, ol {
     @include prery-nav-list(false);
   }
   position: fixed;

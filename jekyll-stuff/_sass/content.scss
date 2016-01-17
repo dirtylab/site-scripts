@@ -33,14 +33,14 @@ article {
       @media (min-width: 1400px) {
         display: none;
       }
-      &+ul {
+      &+ul, &+ol {
         @include prery-nav-list(false);
         font-family: sans-serif;
         @media (min-width: 1400px) {
           @include prery-nav-list(true);
           position:fixed;
-          font-weight: 200;
-          right: 50px;
+          right: 5px;
+          padding-right: 10px;
           bottom:0;
           max-height: $bottom-height ;
           max-width: 200px;
@@ -50,6 +50,7 @@ article {
         }
         @media (min-width: 1600px) {
           max-width: 300px;
+          padding-right: 40px;
         }
       }
     }

@@ -14,12 +14,14 @@
         color: $nav_color;
         text-transform: uppercase;
       }
-      > ul li.section {
-        > span {
-          font-size: 13px;
-        }
-        > a {
-          font-size: 13px;
+      > ul, ol {
+        li.section {
+          > span {
+            font-size: 13px;
+          }
+          > a {
+            font-size: 13px;
+          }
         }
       }
     }
@@ -29,7 +31,7 @@
         color: $nav_selected_color;
       }
     }
-    > ul {
+    > ul, ol {
       @if $right == true {
         padding-left:0;
         border-left:0;
@@ -42,7 +44,7 @@
         border-left: $nav_big_sections_border;
       }
 
-      > li > ul {
+      > li > ul, ol {
         @if $right == true {
           padding-left:0;
           border-left:0;
