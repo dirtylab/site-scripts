@@ -34,7 +34,7 @@ Dans le détail, il contient :
 Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arborescence de fichier suivante  :
 
 ```
-- /client <--- répertoire npm (javascript client)
+- /client <--- répertoire contenant les sources client
 - /dirtylab.github.io <--- répertoire git du site statique
 - /jekyll-stuff <--- dossier jekyll
 - /lets-play-science <--- répertoire git contenant le travail collaboratif
@@ -57,7 +57,6 @@ Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arbo
 ### Présentation des outils 
 
 [**Npm**](https://www.npmjs.com/) est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
-le projet npm est définit dans `client`.  
 `package.json` définit le projet et ses dépendances.
   
 [**Grunt**](http://gruntjs.com/) est un utilitaire de build très populaire! `gruntfile.js` définit les tâches de build.
@@ -70,14 +69,14 @@ Pour installer npm (debian) :
 `sudo apt-get install npm`  
 
 Pour initialiser les dépendances npm :  
-Depuis le répertoire `client` : `npm update`
+Depuis la racine du projet `npm update`
   
 ### Utilisation
 
-Depuis le répertoire `client`, différentes commandes Grunt sont disponibles :
+Depuis la racine du projet, différentes commandes Grunt sont disponibles :
 
 * `grunt pack` génère le bundle dans `jekyll-stuff/js`
-* `grunt jkbuild` appelle `jekyll build` depuis `tmp_site`  
+* `grunt jkbuild` appelle `1_prepare.sh` puis `jekyll build` depuis `tmp_site`  
 * `grunt jkserve` appelle `jekyll serve` depuis `tmp_site`  
 
 ### Développement par modules

@@ -3,7 +3,7 @@
 var buildDir="tmp_site";
 var preBuildScript="1_prepare.sh";
 
-var webpackConf=require("./webpack.config");
+var webpackConf=require("./webpack.config.js");
 module.exports = function (grunt) {
 
     // Show elapsed time after tasks run to visualize performance
@@ -17,13 +17,13 @@ module.exports = function (grunt) {
         // This is where our tasks are defined and configured
         shell: {
             jekyllPrebuild: {
-                command: 'cd ../ && ./'+preBuildScript
+                command: './'+preBuildScript
             },
             jekyllBuild: {
-                command: 'cd ../'+buildDir+' && jekyll build'
+                command: 'cd '+buildDir+' && jekyll build'
             },
             jekyllServe: {
-                command: 'cd ../'+buildDir+' && jekyll serve'
+                command: 'cd '+buildDir+' && jekyll serve'
             }
         },
         webpack: {

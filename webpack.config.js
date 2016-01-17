@@ -1,10 +1,10 @@
 'use strict';
 var webpack=require("webpack"),
     path=require("path"),
-    buildPath=path.resolve(__dirname,"../jekyll-stuff/js");
+    buildPath=path.resolve(__dirname,"jekyll-stuff/js");
 
 module.exports={
-    entry: path.resolve(__dirname,'./src/main.es6'),
+    entry: path.resolve(__dirname,'./client/main.es6'),
     output: {
         path: path.resolve(__dirname,buildPath),
         filename: 'dirtylab.js'
