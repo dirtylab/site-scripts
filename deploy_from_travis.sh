@@ -6,7 +6,7 @@
 
 TMP_DIR="tmp_site"
 
-DEST_REPO="https://$GH_USER:$GH_TOKEN@github.com/dirtylab/dirtylab.github.io"
+DEST_REPO="https://$GH_USER:$GH_TOKEN@$GH_REF"
 DEST_DIR="dirtylab.github.io"
 
 if [ ! -d "$DEST_DIR" ]; then
