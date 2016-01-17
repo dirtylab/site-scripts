@@ -1,5 +1,6 @@
-import test from "plugintest";
+// import { test } from "./test";
+// import { $ } from "jquery";
 
-console.log("Welcome to dirtybiology!");
-test();
+console.log("Bienvenue sur dirtybiology!");
+
 

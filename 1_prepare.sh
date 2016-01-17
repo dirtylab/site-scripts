@@ -13,8 +13,13 @@ TMP_DIR="tmp_site"
 TEMPLATES_DIR="jekyll-stuff"
 JEKYLL_INCLUDES_DIR="_includes"
 JEKYLL_BUILD_DIR="_site"
-NPM_SRC_DIR="client/build"
+NPM_SRC_DIR="client"
 
+echo "*** Bundle and minify javascript sources with webpack"
+
+cd $NPM_SRC_DIR
+grunt pack
+cd ../
 
 echo "*** Clean/refresh directories"
 
@@ -115,10 +120,5 @@ fi
 echo "*** Add navigation array to _config.yml"
 
 echo "$STR_NAV" >> _config.yml
-
-echo "*** Copy javascript files from npm folder"
-
-mkdir "js"
-cp -r ../$NPM_SRC_DIR/* "js/"
 
 cd ..

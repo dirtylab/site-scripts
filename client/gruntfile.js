@@ -3,6 +3,7 @@
 var buildDir="tmp_site";
 var preBuildScript="1_prepare.sh";
 
+var webpackConf=require("./webpack.config");
 module.exports = function (grunt) {
 
     // Show elapsed time after tasks run to visualize performance
@@ -25,45 +26,30 @@ module.exports = function (grunt) {
                 command: 'cd ../'+buildDir+' && jekyll serve'
             }
         },
-        babel: {
-            options: {
-                sourceMap: true,
-                presets: ['es2015']
-            },
-            dist: {
-                files: {
-                    "build/dirtylab.js": "src/main.es6"
-                }
-            }
-        },
-        // grunt bower concatenator config
-        bower_concat : {
-            all : {
-                dest:"build/bundle.js",
-                cssDest:"build/bundle.css"
-            }
-
+        webpack: {
+            build:webpackConf
         }
     });
 
-
-    // Register grunt bower concatenator to bundle up one .js file
-    grunt.loadNpmTasks('grunt-bower-concat');
+    // Register webpack
+    grunt.loadNpmTasks('grunt-webpack');
 
     // Register the grunt serve task
-    grunt.registerTask('serve', [
+    grunt.registerTask('jekyll-serve', [
         'shell:jekyllServe'
     ]);
 
+    grunt.registerTask('pack', [
+        'webpack:build'
+    ]);
     // Register the grunt build task
-    grunt.registerTask('build', [
-        'babel',
-        'bower_concat:all',
+    grunt.registerTask('jekyll-build', [
+        'webpack:build',
         'shell:jekyllPrebuild',
         'shell:jekyllBuild'
     ]);
     // Register build as the default task fallback
-    grunt.registerTask('default', 'build');
+    grunt.registerTask('default', 'pack');
 
 
 };
