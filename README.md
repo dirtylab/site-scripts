@@ -1,4 +1,6 @@
-# dirtylab-site-scripts
+# [Site Dirtylab](http://dirtylab.github.io) : scripts et éléments graphiques
+
+Déploiement automatique vers [dirtylab.github.io](http://dirtylab.github.io) : [![Build status](https://travis-ci.org/dirtylab/site-scripts.svg)](https://travis-ci.org/dirtylab/site-scripts)
 
 Ce repository contient les **scripts bash** et **templates [Liquid](https://github.com/Shopify/liquid/wiki)** ([Jekyll](jekyllrb.com)) permettant d'automatiser la publication des fichiers **.MD** du dépôt [sveinburne/letsplayscience](https://github.com/sveinburne/lets-play-science) vers le site statique [dirtylab.github.io](http://dirtylab.github.io) (issu du repo [dirtylab/dirtylab.github.io](https://github.com/dirtylab/dirtylab.github.io) à l'aide de la mécanique [GitHub pages](https://pages.github.com/))
 
