@@ -3,4 +3,4 @@ lets-play-science
 dirtylab.github.io
 tmp_site
 _site
-node_modules
+node_modules/.bin

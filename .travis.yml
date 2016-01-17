@@ -5,7 +5,9 @@ php:
 
 node_js: "0.10"
 
-install: "npm install"
+before_install: "npm prune"
+
+install: "npm update"
 
 script:
   - bash 1_prepare.sh --prod
