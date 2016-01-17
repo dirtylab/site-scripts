@@ -30,4 +30,4 @@ git config user.email "travis@ci.com"
 
 git commit -m "commit depuis Travis-CI (build number $TRAVIS_BUILD_NUMBER)"
 
-git push origin master
+git push --force --quiet origin master > /dev/null 2>&1
