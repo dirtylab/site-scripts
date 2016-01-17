@@ -1,20 +1,15 @@
 language: php
+
 php:
-- '5.6'
+  - '5.6'
+  
 script:
-- bash 1_prepare.sh --prod
-- bash deploy_from_travis.sh
+  - bash 1_prepare.sh --prod
+  - bash deploy_from_travis.sh
+  
 env:
   global:
-<<<<<<< HEAD
   - GH_REF: github.com/dirtylab/dirtylab.github.io
   - GH_USER: Frosty-Z
   - GH_EMAIL: maxime.pacary@gmail.com
   - secure: Gp4lENtvCd0M/dhJRFNUObkv8wqoRcBX4Bxdr+DXT5F4eMe/cw3sNtd/bhipoRshoHjB4z9Gky+q9yO/hnz3VS9AQLLQA6kE0Myab/MJkO8Tc8VCatpnhIJC2UG89CuY1LmU2L+xToc/8GW6zOvKxAeinGf0Df/5bTeuw4EYsZyK6I18B6UCXXMMEY8jos1V0v32/9pJNTMKlY0BpiYljxYmntlHSZRJpPAdtsuK2XyuQ46wmeZOWcXUvh15+LRVL+x4uNfCvPu2ACBpKODqZPU1EAP+3DgktcoteCQBAwfctKj8/wTAE4GkvbIcTOR5/2d+3YX7xK3vBhj4UzxhTkqUaSANivZYl3eAJ9APJ2DAAYSfXu+MYtUo6bVhSnTQB0na+zITMucfImiyoerP5INw05tlaH3c/n3vaqAayeA67OMk1uWWJjiUiIbE4/Zj4i2nYTf7/4CF1cSNSfvEAC2ui8zzsz1+PTmGSC63bIQneCo1JAvper3aVYTJzmJeNfysNg02AxApT/Qevdb+32moQhyuUSptoSy0EY+3/BcnUWJYNTEXKBGihP6QfXIxeQ5kabIQL84tSxoKYcuyE1hS6Kd+ttYjtBAzqKRefKL+e9WKRNbbkGesIrtmzS//AfnY9e9cKQS3J/5/eQ9RO+7jO01jj7UMHRfw7Pzmk0I=
-=======
-    - GH_REF: github.com/dirtylab/dirtylab.github.io
-    - GH_USER: Frosty-Z
-    - GH_EMAIL: maxime.pacary@gmail.com
-    - GH_TOKEN: 72c59fe68d3620dbf5ce58f0a84517f4ae0b6916
-#    - secure: WpOOiFulvwH3SDLj5fAgXz+0PFk/a0O8ps2pBIS8sp3FReb8aL4CHtK7DvKiNf2b9V9bScTzNpzv9C62PfUuMKSvxkXnzNl7qWraT9jl/jfU7WSmfSvH4Hqj7k1XKdCNKzKmchozkkXy4d6EU5vgBv29aMKeXw1u48VioaPXHSkBeQG5f0ejelrzgLHLt+s30sE4Yap5KP5LgqO3b5i0XerKsvXhPTZiqYASZST3PvIZ5Tofx3/PLq6l4e3oc8ZYAJ3b60iUtLfYM078HRCXSkCzwTMpOMDBP0chMUprV+hszoNTzXsuno4T0dtgME0ffiCuyywt6xyiISgegzLh8obp0FvZfUVuOfKkOCnA0nCa+Qc8+WIDHgOdYnJI8Kwz6Pd3/Ky9GKOMpvCxgvSfumEDkPO/nq00d8qQw637vYDlqvXG61cKkqGdJt1sDxaNGFmUDysepSRSZ61E57qf5DgO7R/H2qomwbIYU95j+SRHXaYAE0nwMaLdf3THrz3zJxWb8kN6H/pVMlxsSXEacdh75cmw6/e2ujz/3nRNeTMfvMs5yfBgrjrR9FYvcxgwYcDIdnDBTM8f4GqZRMzH6GSSiuF6AVRmr17pqFIwDclVJigrmOj08LDkYuRrCzUd4soFlrbuOAcPI9JKF7QeqSV9ssokdBXASB/M99cTntI=
->>>>>>> 26b83c4510268c221534bd1c5e9dbe739cab7678
