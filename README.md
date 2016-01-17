@@ -1,4 +1,6 @@
-# dirtylab-site-scripts
+# [Site Dirtylab](http://dirtylab.github.io) : scripts et éléments graphiques
+
+Déploiement automatique vers [dirtylab.github.io](http://dirtylab.github.io) : [![Build status](https://travis-ci.org/dirtylab/site-scripts.svg)](https://travis-ci.org/dirtylab/site-scripts)
 
 Ce dépot contient le nécessaire pour automatiser la publication des fichiers **.MD** 
 du dépôt [sveinburne/letsplayscience](https://github.com/sveinburne/lets-play-science) vers 
@@ -45,6 +47,10 @@ Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arbo
 
 * Instructions **git** permettant le commit sur le dépot du site statique + push des traitements automatiques 
 
+### `deploy_from_travis.sh` 
+
+* L'équivalent de `2_push.sh`, adapté pour un déploiement automatique depuis [Travis-CI](https://travis-ci.org/).
+
 ## Développement client
 
 
@@ -85,6 +91,3 @@ Les sources sont rédigées en **ecamscript 6**, qui est en train de devenir le 
     * vous pouvez donc les débugger sans problème avec n'importe quel navigateur moderne 
     * dans firefox, section `debugger javascript` depuis la console de développement (F12) 
 * distribuées via [**webpack**](http://webpack.github.io/)
-
-
-
