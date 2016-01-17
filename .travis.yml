@@ -9,7 +9,7 @@ php:
   - '5.6'
 
 script:
-  - bash 1_process.sh --prod
+  - bash 1_prepare.sh --prod
 #  - bash deply_from_travis.sh
 
 env:
