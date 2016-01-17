@@ -1,19 +1,12 @@
-# attention : non testé pour le moment, travail de build/deploiement auto en cours
-# inspiré de https://medium.com/@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db#.2txd8wyk3
-
-# si besoin de supporter plusieurs langages, voir ici https://github.com/travis-ci/travis-ci/issues/538
 language: php
-
 php:
   - '5.6'
-
 script:
   - bash 1_prepare.sh --prod
   - bash deploy_from_travis.sh
-
 env:
   global:
-  - GH_REF: github.com/dirtylab/dirtylab.github.io
-  - GH_USER: Frosty-Z
-  - GH_EMAIL: maxime.pacary@gmail.com
-  - secure: Y6kBOaR+2N+o+ZLICKByqUXPzmXWgr7gK9nbqXfTdcUoQFEeSm9HfzWqsy3Olsmw1o8VG79F4+3rqlzJFl24mleXIR01nWMLyT065IYNYUWNqyUDMuO9D0h+dmuXDQTLKu9fqDYUY+olIjfYI9ANthphN7m/4GomhZeGdxpE/77hEda85+O3eVzeFb2F9zAzDyUAdOG71aovIGhpq01CTqcyrrkQXG04r/rQfWLp/0b9LiRSe+N68Gfqu/WZ2etxZnEQ9FPFn98jnPmI9wc32tEMWspQztHOcz2By527tdl9mXl4aC+DggR3l7ObbjQ2ksymiUqZ2w1DD/RmeQuX4vhuEOLZj7h8r5mu/Kb6q3+j5J0CSOcK9ZTbdEEx8qRX4GEvcBUdKpw4jnHDXUwKgnv4haF656RIlSROzbcaaZym/vuL+ebqPGYyqNi0HobJ2T/VUsQ4fNOMQjFwvioY+suGm8na26gPk5mDzNM9+xxeFxeaIs9kCKrn3I5oGYZphQoM040xVIfeiwtLsigs/lDkXfh/RVmtBqAfNPouiRCKYUBIHun1rOZM2nrHiEc1ALff7l9M12aIMt9Uf3ha4s+WLBStYSc7NFLJYMWCWGVtH/DP/80e5IywL6/ET1ZEzKDPMmT4Q8CJmvGJm0Y/G8G4iVsCSiVxCJ8WJty0hPo=
+    - GH_REF: github.com/dirtylab/dirtylab.github.io
+    - GH_USER: Frosty-Z
+    - GH_EMAIL: maxime.pacary@gmail.com
+    - secure: LQb58hTNgSr736Ykdc6eZFWwNzgu3AsW+wV5pMUzvyUvcDziOxW67GPWJZn+zvhOpxEJpC6ePJ4+Y7vZTh3SulxDWZSkUij/kyQz3b5gw/P4J321FZ7tvCXrUxS6TSPPV74H4FVEKeJ0xn+9WEERZbwUfdhiKAsaObh/+oNzcgvyddbtH1qP5G8GMwIWiyd7DvfA9bYoZmTWM9KhMmbaWVesVibQfnFAjJ3DePl8pZ7w7dtKcXRbekuv1VVQY4zcK4i1SJn0eerJvr21YCJC67xAGULbE6AksEzV8rzgZsYgd00S9l9OQ+9BmbIJqly3eYJCusveVHQGvhNu2vgZZ2zV2I3toXPC4I5E7rP7wi5JhpY+GjlJxh2aJN+SvI/4Rwu7fYyS8SlBr5UNJDYYn1nm2ieub8LT1yUNkprL8pLjh9fx8QstTk2S6cCf9T2oP3ZXzZrUloJRvPwVidkF+ECKOBLbdCMfx5dyX4k4t8SoLS9sJv6VNCpU+2V1FFQCX6dwsagEv28fWFQcZMnGMjKNwW909fGXQoqeXJTpzbofBVbnhJ5ESfg+UNiZ+H7fQK75a3KCNdGF3mWAdk/zYt/adJkRLCre5V1bKeABDr6bcl85my++iX+kdGQAOiWUbhyuGXt5jKeYSlUhH/rbCzfssUu6nRnm2JBzDUWKI5U=
