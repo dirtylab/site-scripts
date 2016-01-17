@@ -1,6 +1,7 @@
 # attention : non testé pour le moment, travail de build/deploiement auto en cours
 # inspiré de https://medium.com/@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db#.2txd8wyk3
 
+# si besoin de supporter plusieurs langages, voir ici https://github.com/travis-ci/travis-ci/issues/538
 language: php
 
 php:
@@ -8,7 +9,7 @@ php:
 
 script:
   - bash 1_prepare.sh --prod
-#  - bash deply_from_travis.sh
+  - bash deploy_from_travis.sh
 
 env:
   global:
