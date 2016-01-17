@@ -13,13 +13,13 @@ Dans le détail, il contient :
 
 ## Détail des scripts :
 
-`1_process.sh`
+### `1_process.sh`
 
-### Options
+#### Options
 
 **`--prod` lance le script pour la production**
 
-### Séquencement
+#### Séquencement
 
 * Packetage des sources javascript depuis le répertoire `client`, via l'utilitaire [**webpack**](http://webpack.github.io/)
 * Récupération des **.MD** du repo `lets-play-science` dans un répertoire temporaire `tmp_site`
@@ -27,11 +27,7 @@ Dans le détail, il contient :
 * Création de **.html** à la racine (un pour chaque **.MD**) comportant les instructions de conversion de **Markdown** vers **HTML**
 * Ajout de templates header / footer / navigation / style (contenu du répertoire [jekyll-stuff](jekyll-stuff))
 
-`2_push.sh`
-
-* Instructions **git** permettant le commit + push des traitements automatiques 
-
-## Lancement de 1_process.sh
+### Lancement 
 
 Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arborescence de fichier suivante  :
 
@@ -45,7 +41,14 @@ Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arbo
 - 2_push.sh
 ```
 
-## NPM + Grunt + Babel + Webpack
+### `2_push.sh`
+
+* Instructions **git** permettant le commit sur le dépot du site statique + push des traitements automatiques 
+
+## Développement client
+
+
+### Présentation des outils 
 
 [**Npm**](https://www.npmjs.com/) est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
 le projet npm est définit dans `client`.  
@@ -55,14 +58,23 @@ le projet npm est définit dans `client`.
 [**Babel**](https://babeljs.io/) est un compilateur [ecmascript 6](http://es6-features.org) vers ecmascript 5. 
 [**Webpack**](http://webpack.github.io/) est un concatenateur de modules javascript offrant beaucoup de flexibilité. `webpack.config.js` est son module de configuration.    
 
+### Installation
 
 Pour installer npm (debian) :  
 `sudo apt-get install npm`  
 
 Pour initialiser les dépendances npm :  
-Depuis le répertoire `client` : `npm update`  
+Depuis le répertoire `client` : `npm update`
+  
+### Utilisation
 
-## Développement par modules
+Depuis le répertoire `client`, différentes commandes Grunt sont disponibles :
+
+* `grunt pack` génère le bundle dans `jekyll-stuff/js`
+* `grunt jkbuild` appelle `jekyll build` depuis `tmp_site`  
+* `grunt jkserve` appelle `jekyll serve` depuis `tmp_site`  
+
+### Développement par modules
 
 [Une bonne introduction à l'approche par modules en javascript.](http://webpack.github.io/docs/motivation.html)
 

@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-webpack');
 
     // Register the grunt serve task
-    grunt.registerTask('jekyll-serve', [
+    grunt.registerTask('jkserve', [
         'shell:jekyllServe'
     ]);
 
@@ -43,8 +43,7 @@ module.exports = function (grunt) {
         'webpack:build'
     ]);
     // Register the grunt build task
-    grunt.registerTask('jekyll-build', [
-        'webpack:build',
+    grunt.registerTask('jkbuild', [
         'shell:jekyllPrebuild',
         'shell:jekyllBuild'
     ]);
