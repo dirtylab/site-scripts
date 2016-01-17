@@ -29,3 +29,7 @@ On doit donc avoir dans un dossier à part :
 `2_push.sh`
 
 * Instructions **git** permettant le commit + push des traitements automatiques 
+
+`deploy_from_travis.sh`
+
+* L'équivalent de `2_push.sh`, adapté pour un déploiement automatique depuis [Travis-CI](https://travis-ci.org/).
