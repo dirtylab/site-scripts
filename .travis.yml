@@ -1,7 +1,16 @@
 # attention : non testé pour le moment, travail de build/deploiement auto en cours
+# inspiré de https://medium.com/@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db#.2txd8wyk3
 
-language: bash
+language:
+  - bash
+  - php
 
 script:
   - bash 1_process.sh --prod
-#  - bash 2_push.sh
+#  - bash deply_from_travis.sh
+
+env:
+  global:
+  - GH_REF: github.com/dirtylab/dirtylab.github.io
+  - GH_USER: Frosty-Z
+  - secure: Y6kBOaR+2N+o+ZLICKByqUXPzmXWgr7gK9nbqXfTdcUoQFEeSm9HfzWqsy3Olsmw1o8VG79F4+3rqlzJFl24mleXIR01nWMLyT065IYNYUWNqyUDMuO9D0h+dmuXDQTLKu9fqDYUY+olIjfYI9ANthphN7m/4GomhZeGdxpE/77hEda85+O3eVzeFb2F9zAzDyUAdOG71aovIGhpq01CTqcyrrkQXG04r/rQfWLp/0b9LiRSe+N68Gfqu/WZ2etxZnEQ9FPFn98jnPmI9wc32tEMWspQztHOcz2By527tdl9mXl4aC+DggR3l7ObbjQ2ksymiUqZ2w1DD/RmeQuX4vhuEOLZj7h8r5mu/Kb6q3+j5J0CSOcK9ZTbdEEx8qRX4GEvcBUdKpw4jnHDXUwKgnv4haF656RIlSROzbcaaZym/vuL+ebqPGYyqNi0HobJ2T/VUsQ4fNOMQjFwvioY+suGm8na26gPk5mDzNM9+xxeFxeaIs9kCKrn3I5oGYZphQoM040xVIfeiwtLsigs/lDkXfh/RVmtBqAfNPouiRCKYUBIHun1rOZM2nrHiEc1ALff7l9M12aIMt9Uf3ha4s+WLBStYSc7NFLJYMWCWGVtH/DP/80e5IywL6/ET1ZEzKDPMmT4Q8CJmvGJm0Y/G8G4iVsCSiVxCJ8WJty0hPo=

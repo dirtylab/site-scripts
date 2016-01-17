@@ -2,11 +2,11 @@
 
 # @author Frosty-Z
 # @date 2015-12-22
-# @desc push changes made by 1_process.sh to 'dirtylab.github.io' repo
+# @desc push changes made by 1_process.sh to 'dirtylab.github.io' repo. adapted for Travis-CI.
 
 TMP_DIR="tmp_site"
 
-DEST_REPO="https://github.com/dirtylab/dirtylab.github.io"
+DEST_REPO="https://$GH_USER:$GH_TOKEN@github.com/dirtylab/dirtylab.github.io"
 DEST_DIR="dirtylab.github.io"
 
 if [ ! -d "$DEST_DIR" ]; then
@@ -25,9 +25,9 @@ rm -rf _site
 
 git add .
 
-# you may need to do
-# git config --global --edit
-# before running this:
-git commit -m "commit depuis script"
+git config user.name "Travis-CI"
+git config user.email "travis@ci.com"
+
+git commit -m "commit depuis Travis-CI (build number $TRAVIS_BUILD_NUMBER)"
 
 git push origin master
