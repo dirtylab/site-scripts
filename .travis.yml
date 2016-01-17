@@ -1,9 +1,7 @@
 # attention : non testé pour le moment, travail de build/deploiement auto en cours
 # inspiré de https://medium.com/@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db#.2txd8wyk3
 
-language:
-  - bash
-  - php
+language: php
 
 php:
   - '5.6'
