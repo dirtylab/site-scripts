@@ -7,8 +7,8 @@
 
 # requires PHP 5+ to be installed on the system
 
-ORIG_REPO_URL="https://github.com/sveinburne/lets-play-science"
-ORIG_DIR="lets-play-science"
+ORIG_REPO_URL="https://github.com/dirtylab/wiki"
+ORIG_DIR="wiki"
 TMP_DIR="tmp_site"
 TEMPLATES_DIR="jekyll-stuff"
 JEKYLL_INCLUDES_DIR="_includes"
