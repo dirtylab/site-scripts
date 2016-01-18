@@ -76,6 +76,8 @@ Depuis la racine du projet `npm update`
 Depuis la racine du projet, différentes commandes Grunt sont disponibles :
 
 * `grunt pack` génère le bundle dans `jekyll-stuff/js`
+    * `grunt pack:dev` (défaut) : ni optimisation, ni minification
+    * `grunt pack:prod` : optimisé et minifié
 * `grunt jkbuild` appelle `1_prepare.sh` puis `jekyll build` depuis `tmp_site`  
 * `grunt jkserve` appelle `jekyll serve` depuis `tmp_site`  
 

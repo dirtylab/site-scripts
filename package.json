@@ -20,6 +20,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "tinyscrollbar": "^2.4.2"
   }
 }

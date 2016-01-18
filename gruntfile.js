@@ -27,7 +27,8 @@ module.exports = function (grunt) {
             }
         },
         webpack: {
-            build:webpackConf
+            dev:webpackConf(false),
+            prod:webpackConf(true)
         }
     });
 
@@ -39,16 +40,21 @@ module.exports = function (grunt) {
         'shell:jekyllServe'
     ]);
 
-    grunt.registerTask('pack', [
-        'webpack:build'
-    ]);
+    grunt.registerTask('pack', function(mode){
+        if(mode==="prod") grunt.task.run(["webpack:prod"]);
+        else if(mode==="dev"||mode===undefined) grunt.task.run(["webpack:dev"]);
+        else {
+            grunt.fail.warn("Unknown option "+mode+". Falling back to dev mode");
+            grunt.task.run(["webpack:dev"]);
+        }
+    });
     // Register the grunt build task
     grunt.registerTask('jkbuild', [
         'shell:jekyllPrebuild',
         'shell:jekyllBuild'
     ]);
     // Register build as the default task fallback
-    grunt.registerTask('default', 'pack');
+    grunt.registerTask('default', 'pack:dev');
 
 
 };

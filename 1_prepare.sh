@@ -18,7 +18,12 @@ NPM_SRC_DIR="client"
 echo "*** Bundle and minify javascript sources with webpack"
 
 cd $NPM_SRC_DIR
-grunt pack
+if [ "$1" = "--prod" ]; then
+    grunt pack:prod
+else
+    grunt pack:dev
+fi
+
 cd ../
 
 echo "*** Clean/refresh directories"
