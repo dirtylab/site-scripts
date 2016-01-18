@@ -85,9 +85,9 @@ Depuis la racine du projet, différentes commandes Grunt sont disponibles :
 
 [Une bonne introduction à l'approche par modules en javascript.](http://webpack.github.io/docs/motivation.html)
 
-Les sources sont rédigées en [**ecamscript 6**](http://es6-features.org), qui est en train de devenir le nouveau standard. Elles sont :
+Les sources sont rédigées en [**ECMAScript 6**](http://es6-features.org), qui est en train de devenir le nouveau standard. Elles sont :
 
-* compilées en ecmascript 5 via [**babel**](https://babeljs.io/), pour des raisons de compatibilité évidentes
+* compilées en ECMAScript 5 via [**babel**](https://babeljs.io/), pour des raisons de compatibilité évidentes
 * minifiées, [**avec source-map**](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) 
     * vous pouvez donc les débugger sans perdre en lisibilité avec n'importe quel navigateur moderne 
     * dans firefox, section `debugger javascript` depuis la console de développement (F12) 
