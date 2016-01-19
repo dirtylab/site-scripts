@@ -1,6 +1,6 @@
 # [Site Dirtylab](http://dirtylab.github.io) : scripts et éléments graphiques
 
-Déploiement automatique vers [dirtylab.github.io](http://dirtylab.github.io) : [![Build status](https://travis-ci.org/dirtylab/site-scripts.svg)](https://travis-ci.org/dirtylab/site-scripts)
+Déploiement automatique vers [dirtylab.github.io](http://dirtylab.github.io) : [![Build status](https://travis-ci.org/dirtylab/site-scripts.svg)](https://travis-ci.org/dirtylab/site-scripts) + déclenchement auto depuis [dirtylab/wiki]() [![Build status](https://travis-ci.org/dirtylab/wiki.svg)](https://travis-ci.org/dirtylab/wiki)
 
 Ce dépot contient le nécessaire pour automatiser la publication des fichiers **.MD** 
 du dépôt [sveinburne/letsplayscience](https://github.com/dirtylab/wiki) vers 
