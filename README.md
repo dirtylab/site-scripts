@@ -1,6 +1,6 @@
 # [Site Dirtylab](http://dirtylab.github.io) : scripts et éléments graphiques
 
-Déploiement automatique vers [dirtylab.github.io](http://dirtylab.github.io) : [![Build status](https://travis-ci.org/dirtylab/site-scripts.svg)](https://travis-ci.org/dirtylab/site-scripts)
+Déploiement automatique vers [dirtylab.github.io](http://dirtylab.github.io) : [![Build status](https://travis-ci.org/dirtylab/site-scripts.svg)](https://travis-ci.org/dirtylab/site-scripts) + déclenchement auto depuis [dirtylab/wiki]() [![Build status](https://travis-ci.org/dirtylab/wiki.svg)](https://travis-ci.org/dirtylab/wiki)
 
 Ce dépot contient le nécessaire pour automatiser la publication des fichiers **.MD** 
 du dépôt [sveinburne/letsplayscience](https://github.com/dirtylab/wiki) vers 
@@ -56,12 +56,14 @@ Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arbo
 
 ### Présentation des outils 
 
-[**Npm**](https://www.npmjs.com/) est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
+* [**Npm**](https://www.npmjs.com/) est un gestionnaire de dépendances javascript, originellement utilisé pour Nodejs mais fonctionne aussi bien pour gérer le code javascript client.
 `package.json` définit le projet et ses dépendances.
   
-[**Grunt**](http://gruntjs.com/) est un utilitaire de build très populaire! `gruntfile.js` définit les tâches de build.
-[**Babel**](https://babeljs.io/) est un compilateur [ecmascript 6](http://es6-features.org) vers ecmascript 5. 
-[**Webpack**](http://webpack.github.io/) est un concatenateur de modules javascript offrant beaucoup de flexibilité. `webpack.config.js` est son module de configuration.    
+* [**Grunt**](http://gruntjs.com/) est un utilitaire de build très populaire! `gruntfile.js` définit les tâches de build.
+
+* [**Babel**](https://babeljs.io/) est un compilateur [ecmascript 6](http://es6-features.org) vers ecmascript 5.
+
+* [**Webpack**](http://webpack.github.io/) est un concatenateur de modules javascript offrant beaucoup de flexibilité. `webpack.config.js` est son module de configuration.    
 
 ### Installation
 
@@ -70,6 +72,9 @@ Pour installer npm (debian) :
 
 Pour initialiser les dépendances npm :  
 Depuis la racine du projet `npm update`
+
+Pour installer [Grunt](http://gruntjs.com/) :
+`npm install grunt-cli -g`
   
 ### Utilisation
 
