@@ -79,6 +79,11 @@
 	    }, _tooltips2.default);
 	    (0, _jquery2.default)("[data-tipso]:not(.tipso-wide)").tipso(_tooltips2.default);
 	    (0, _jquery2.default)("[data-tipso].tipso-wide").tipso(tipsoWideConfig);
+	
+	    // Clic sur le logo
+	    (0, _jquery2.default)("#header").find("> img#logo").on("click", function () {
+	        return window.location.href = "/";
+	    });
 	});
 
 /***/ },
