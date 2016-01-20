@@ -54,22 +54,29 @@
 	
 	__webpack_require__(4);
 	
+	var _tooltips = __webpack_require__(5);
+	
+	var _tooltips2 = _interopRequireDefault(_tooltips);
+	
+	var _hello = __webpack_require__(6);
+	
+	var _hello2 = _interopRequireDefault(_hello);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// Webpack will load this json file
-	var tooltipConfig = __webpack_require__(5); // import { test } from "./test";
+	// Webpack va charger ce fichier json grace à la dépendance-dev json-loader
 	
-	console.info("Bienvenue sur dirtybiology!");
+	(0, _hello2.default)(); // Imports
 	
 	(0, _jquery2.default)(document).ready(function () {
 	    // Activation de la scrollbar sur la navigation de gauche
 	    (0, _jquery2.default)("#nav").find("> #nav-wrapper").scrollbar();
 	    // Activation des tooltips
-	    (0, _jquery2.default)("[data-tipso]:not(.tipso-wide)").tipso(tooltipConfig);
+	    (0, _jquery2.default)("[data-tipso]:not(.tipso-wide)").tipso(_tooltips2.default);
 	    (0, _jquery2.default)("[data-tipso].tipso-wide").tipso(Object.assign({
 	        width: '',
 	        maxWidth: '350'
-	    }, tooltipConfig));
+	    }, _tooltips2.default));
 	});
 
 /***/ },
@@ -10718,6 +10725,25 @@
 	module.exports = {
 		"size": "small",
 		"background": "#7a7a7a"
+	};
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// Constante
+	var githubUrl = 'http://github.com/dirtylab/site-scripts';
+	var bienvenue = 'Bienvenue sur dirtybiology!\nTu es développeur et souhaite contribuer à l\'élaboration du site?\nRejoins-nous ici : ' + githubUrl;
+	
+	// Export du module avec une petite lambda
+	
+	exports.default = function () {
+	  return console.info(bienvenue);
 	};
 
 /***/ }
