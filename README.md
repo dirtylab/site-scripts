@@ -89,6 +89,7 @@ Depuis la racine du projet, différentes commandes Grunt sont disponibles :
 ### Développement par modules
 
 [Une bonne introduction à l'approche par modules en javascript.](http://webpack.github.io/docs/motivation.html)
+[Les modules ECMAScript 6 expliqués](http://www.2ality.com/2014/09/es6-modules-final.html)
 
 Les sources sont rédigées en [**ECMAScript 6**](http://es6-features.org), qui est en train de devenir le nouveau standard. Elles sont :
 
