@@ -64,19 +64,21 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// Import de sources locales, précédées de "." == répertoire courant
 	// Webpack va charger ce fichier json grace à la dépendance-dev json-loader
 	
-	(0, _hello2.default)(); // Imports
+	(0, _hello2.default)(); // Imports de dépendances npm
 	
 	(0, _jquery2.default)(document).ready(function () {
 	    // Activation de la scrollbar sur la navigation de gauche
 	    (0, _jquery2.default)("#nav").find("> #nav-wrapper").scrollbar();
 	    // Activation des tooltips
+	    var tipsoWideConfig = Object.assign({}, {
+	        maxWidth: Infinity,
+	        width: null // https://github.com/object505/tipso/pull/38
+	    }, _tooltips2.default);
 	    (0, _jquery2.default)("[data-tipso]:not(.tipso-wide)").tipso(_tooltips2.default);
-	    (0, _jquery2.default)("[data-tipso].tipso-wide").tipso(Object.assign({
-	        width: '',
-	        maxWidth: '350'
-	    }, _tooltips2.default));
+	    (0, _jquery2.default)("[data-tipso].tipso-wide").tipso(tipsoWideConfig);
 	});
 
 /***/ },
