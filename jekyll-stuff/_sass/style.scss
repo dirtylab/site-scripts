@@ -43,13 +43,13 @@ table {
 td {
   @extend %table-style;
 }
-.left {
+.text-left {
   text-align: left;
 }
-.right {
+.text-right {
   text-align: right;
 }
-.center {
+.text-center {
   text-align: center;
 }
 .message {

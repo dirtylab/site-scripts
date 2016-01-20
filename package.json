@@ -21,6 +21,9 @@
   },
   "dependencies": {
     "jquery": "^2.2.0",
-    "tinyscrollbar": "^2.4.2"
+    "jquery.scrollbar": "^0.2.10",
+    "json-loader": "^0.5.4",
+    "lodash": "^4.0.0",
+    "tipso": "^1.0.8"
   }
 }

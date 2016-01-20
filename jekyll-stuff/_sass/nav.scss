@@ -1,9 +1,8 @@
 #nav {
-  > ul, > ol {
+  #nav-wrapper > ul,#nav-wrapper  > ol {
     @include prery-nav-list(false);
     font-weight: 200;
-    overflow-y:auto ;
-    overflow-x:hidden ;
+    overflow:visible;
   }
   position: fixed;
   top: 0;

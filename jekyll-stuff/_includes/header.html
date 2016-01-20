@@ -1,0 +1,20 @@
+<header id="header">
+    <a href="/" id="logo">
+        <img src="/img/DirtyLab-logo.svg">
+    </a>
+    <ul id="social">
+        {% for media in site.data.social %}
+        <li class="">
+            <a href="{{media.url}}"
+               class="button tipso-wide"
+               target="_blank"
+               data-tipso-position="bottom"
+               data-tipso="{{media.hover}}">
+                <img src="/img/site/social/{{media.svg}}" alt="{{media.alt}}" />
+            </a>
+        </li>
+
+        {% endfor %}
+
+    </ul>
+</header>
