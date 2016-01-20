@@ -1,4 +1,9 @@
 #nav {
+  > .top-responsive-padding {
+    height: $top-height;
+    min-height: $min-height-top;
+    width: $nav-width;
+  }
   #nav-wrapper > ul,#nav-wrapper  > ol {
     @include prery-nav-list(false);
     font-weight: 200;
@@ -6,7 +11,6 @@
   }
   position: fixed;
   top: 0;
-  padding-top: $top-height;
   left: 0;
   max-width: $nav-width;
   height: 100%;
