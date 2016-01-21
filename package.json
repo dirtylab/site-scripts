@@ -23,7 +23,6 @@
   "dependencies": {
     "jquery": "^2.2.0",
     "jquery.scrollbar": "^0.2.10",
-    "lodash": "^4.0.0",
     "tipso": "^1.0.8"
   }
 }
