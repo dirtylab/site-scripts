@@ -34,16 +34,16 @@ Dans le détail, il contient :
 Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arborescence de fichier suivante  :
 
 ```
-- /client <--- répertoire contenant les sources client
-- /dirtylab.github.io <--- répertoire git du site statique
-- /jekyll-stuff <--- dossier jekyll
+- /client <--- répertoire contenant le projet npm générant les sources client
+- /jekyll-build <--- répertoire git du site statique, ignoré 
+- /jekyll <--- dossier contenant les templates jekyll
 - /wiki <--- répertoire git contenant le travail collaboratif
-- /php_emojize <--- script php pour gérer les émoticônes 
-- 1_process.sh
-- 2_push.sh
+- /scripts <--- contient les scripts utiles au build et déploiemnt  
+    - build.sh
+    - push.sh
 ```
 
-### `2_push.sh`
+### `push.sh`
 
 * Instructions **git** permettant le commit sur le dépot du site statique + push des traitements automatiques 
 

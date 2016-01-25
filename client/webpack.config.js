@@ -1,7 +1,8 @@
 'use strict';
-var webpack=require("webpack"),
+var jekyllJsPath ="../jekyll/js",
+    webpack=require("webpack"),
     path=require("path"),
-    buildPath=path.resolve(__dirname,"jekyll-stuff/js");
+    buildPath=path.resolve(__dirname,jekyllJsPath);
 
 module.exports=function(production){
     var plugins=[new webpack.NoErrorsPlugin()];
@@ -11,7 +12,7 @@ module.exports=function(production){
             new webpack.optimize.OccurrenceOrderPlugin(true)
     );
     return {
-        entry: path.resolve(__dirname,'./client/main.es6'),
+        entry: path.resolve(__dirname,'./es6/main.es6'),
         output: {
             path: path.resolve(__dirname,buildPath),
             filename: 'dirtylab.js'

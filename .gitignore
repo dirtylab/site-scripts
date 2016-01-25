@@ -2,6 +2,6 @@
 lets-play-science
 wiki
 dirtylab.github.io
-tmp_site
+jekyll-build
 _site
 node_modules/.bin

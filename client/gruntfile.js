@@ -1,9 +1,9 @@
 'use strict';
 
-var buildDir="tmp_site";
-var preBuildScript="1_prepare.sh";
+var buildDir="../jekyll-build";
+var preBuildScript="../scripts/build.sh";
 
-var webpackConf=require("./../webpack.config.js");
+var webpackConf=require("./webpack.config.js");
 module.exports = function (grunt) {
 
     // Show elapsed time after tasks run to visualize performance
