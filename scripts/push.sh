@@ -33,5 +33,6 @@ git add .
 # git config --global --edit
 # before running this:
 git commit -m "commit depuis script"
+pwd
 
 git push origin master
