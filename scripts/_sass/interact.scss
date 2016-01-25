@@ -1,0 +1,24 @@
+#interact-bar {
+  &:before {
+    content:"ACTIONS";
+    position: absolute;
+    top:-25px;
+    left:10px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  min-height: 0;
+  position: relative;
+  padding:10px;
+  margin-top:30px;
+  background-color: $content_background;
+  border-top: 2px solid $delight-border;
+  border-right: 2px solid $delight-border;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 5px;
+  box-sizing: border-box;
+  width: 110%;
+
+}

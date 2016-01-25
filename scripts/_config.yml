@@ -1,0 +1,49 @@
+
+baseurl: 
+url: http://localhost:4000/
+
+# for GitHub Flavored Markdown support
+# requires 'gem install redcarpet'
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
+
+sass:
+    sass_dir: _sass
+
+# requires 'gem install github-pages' + 'gem install <gemname>' for all gems below
+gems: ["jemoji"]
+#- jekyll-mentions
+#- jemoji
+#- jekyll-redirect-from
+#- jekyll-sitemap
+#- jekyll-feed
+#- sass
+
+files:
+- README
+- THEORIE/PISTES/A2
+- THEORIE/PISTES/C4
+- THEORIE/PISTES/B1
+- THEORIE/PISTES/A3
+- THEORIE/PISTES/C2
+- THEORIE/PISTES/C1
+- THEORIE/PISTES/A1
+- THEORIE/PISTES/C3
+- THEORIE/PISTES
+- THEORIE/INSPIRATION
+- LICENSE
+- index
+- CONTRIBUTEURS
+- HELP
+- DEFINITIONS
+- PRATIQUE/VISIONS
+- PRATIQUE/VP/VP-forum-propositions-Youtube
+- PRATIQUE/SPECIFICATIONS
+- PRATIQUE/HEBERGEURS
+- PRATIQUE/SYNTHESE_YOUTUBE
+- PRATIQUE/POC
+- PRATIQUE/VE/VE-Frosty-Z
+- PRATIQUE/VE/VE-Gophys
+- PRATIQUE/OUTILS
+

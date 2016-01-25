@@ -1,0 +1,27 @@
+#nav {
+  > .top-responsive-padding {
+    height: $header-height;
+    min-height: $min-header-height;
+    width: $nav-width;
+  }
+  #nav-wrapper > ul,#nav-wrapper  > ol {
+    @include prery-nav-list(false);
+    font-weight: 200;
+    overflow:visible;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: $nav-width;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $dashboard_background;
+  border-right: $delight-border solid 2px;
+  box-sizing: border-box;
+  @media (max-width:799px) {
+    display: none;
+  }
+
+}

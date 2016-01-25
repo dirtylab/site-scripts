@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 256 256">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<path d="M166,15.8c-4-11.9-17-18.5-29-14.6-12,3.89-18,16.8-14,28.7l59,181c4,11,16,18,27,14,12-3,20-16,16-28,0,0-59-181-59-181" fill="#DFA22F"/>
+<path d="M74.6,45.5c-3.9-12-16.7-18.5-28.7-14.6s-18.5,16.7-14.6,28.7l58.9,181c4.1,11,15.8,17,27.8,14s19-16,16-28c-1-1-59.4-182-59.4-182" fill="#3CB187"/>
+<path d="M240,166c12-4,19-17,15-29s-17-18-29-14l-181,59c-11.2,4-17.5,16-14.1,27,3.5,12,16.3,20,28.2,16,0.4,0,181-59,181-59" fill="#CE1E5B"/>
+<path d="M82.5,217c11.8-4,27.5-9,43.5-14-4-12-9-27-14-43l-43.6,14,14.1,43" fill="#392538"/>
+<path d="M174,188c16-6,31-11,43-14-4-12-9-28-14-44l-43,14,14,44" fill="#BB242A"/>
+<path d="M210,74.7c12-3.9,19-16.7,15-28.7s-17-18.5-29-14.7l-181,59c-11.2,4-17.4,15.7-14.1,27.7,3.48,12,16.3,19,28.2,16,0.5-1,181-59.3,181-59.3" fill="#72C5CD"/>
+<path d="M52.8,126c11.8-4,27-9,43.4-14-5.3-16.5-10.3-31.8-14.1-43.5l-43.4,14.1,14.1,43.4" fill="#248C73"/>
+<path d="M144,96.3c17-5.4,32-10.3,44-14.1-6-16.4-11-31.7-15-43.4l-43,14.1,14,43.4" fill="#62803A"/>
+</svg>

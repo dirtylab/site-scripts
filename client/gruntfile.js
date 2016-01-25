@@ -3,7 +3,7 @@
 var buildDir="tmp_site";
 var preBuildScript="1_prepare.sh";
 
-var webpackConf=require("./webpack.config.js");
+var webpackConf=require("./../webpack.config.js");
 module.exports = function (grunt) {
 
     // Show elapsed time after tasks run to visualize performance
