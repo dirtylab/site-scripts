@@ -44,4 +44,8 @@ git push --force --quiet  origin master > /dev/null 2>&1
 #pour debug
 # git push origin master
 
-export TRAVIS_PREVIOUS_COMMIT=$TRAVIS_COMMIT
+# sauvegarde de la référence du dernier commit
+if [ ! -d $HOME/.meta/ ]; then
+    mkdir $HOME/.meta
+fi
+echo $TRAVIS_COMMIT > $HOME/.meta/lastCommit

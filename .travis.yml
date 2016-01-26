@@ -28,3 +28,4 @@ cache:
   directories:
     - "client/node_modules"
     - "wiki"
+    - "$HOME/meta"
