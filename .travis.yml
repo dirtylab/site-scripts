@@ -5,6 +5,8 @@ php:
 
 node_js: "0.10"
 
+git:
+  depth: 9999999
 
 script:
   - bash scripts/build.sh --prod
