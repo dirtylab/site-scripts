@@ -14,6 +14,8 @@ source_dir=$(pwd)
 # include vars
 . vars.sh
 
+bash --version
+
 shall_build_js_sources=true
 
 [[ -e $last_commit_file ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
