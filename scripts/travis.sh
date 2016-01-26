@@ -15,10 +15,13 @@ dest_dir="$source_dir/../dirtylab.github.io"
 
 if [ ! -d "$dest_dir" ]; then
   echo "*** Create $dest_dir directory"
-  git clone $dest_repo $dest_dir
+  mkdir $dest_dir
+  cd $dest_dir
+  pwd
+  git clone $dest_repo .
+else
+  cd $dest_dir
 fi
-
-cd $dest_dir
 
 git pull origin master
 
