@@ -1,9 +1,10 @@
 #!/bin/bash
 # lower-case definitions, not to risk any system-wide env conflict
 
-echo $source_dir
+projet_root_dir=$(cd "$source_dir/../" && pwd)
 
-projet_root_dir=$(dirname "$source_dir/..")
+echo "project root dir computed to : $projet_root_dir"
+
 # wiki
 wiki_repo_url="https://github.com/dirtylab/wiki"
 wiki_repo_dir="$projet_root_dir/wiki" 
