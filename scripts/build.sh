@@ -18,7 +18,7 @@ bash --version
 
 shall_build_js_sources=true
 
-[[ -e $last_commit_file ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
+[[ -e "$last_commit_file" ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
     cd "$source_dir/.."
     last_commit=$(cat $last_commit_file)
     # if any, commit between last build and current commit that saw changes in "client" dir
@@ -31,7 +31,7 @@ shall_build_js_sources=true
     }
 }
 
-[ $shall_build_js_source = true ] && {
+[ "$shall_build_js_source" = true ] && {
     cd $npm_dir
     npm update
     if [ "$1" = "--prod" ]; then
