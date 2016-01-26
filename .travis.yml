@@ -28,5 +28,4 @@ cache:
   directories:
     - "client/node_modules"
     - ".build-meta"
-    - "wiki"
     - "jekyll/js"
