@@ -9,7 +9,7 @@ cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire c
 
 source_dir=$(pwd)
 
-tmp_dir="$source_dir/../tmp_site"
+tmp_dir="$source_dir/../jekyll-build"
 dest_repo="https://$GH_USER:$GH_TOKEN@$GH_REF"
 dest_dir="$source_dir/../dirtylab.github.io"
 
