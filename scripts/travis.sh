@@ -43,3 +43,5 @@ git commit -m "commit depuis Travis-CI (build number $TRAVIS_BUILD_NUMBER)"
 git push --force --quiet  origin master > /dev/null 2>&1
 #pour debug
 # git push origin master
+
+export TRAVIS_PREVIOUS_COMMIT=$TRAVIS_COMMIT
