@@ -15,7 +15,7 @@ Dans le détail, il contient :
 
 ## Détail des scripts :
 
-### `1_process.sh`
+### `scripts/build.sh`
 
 #### Options
 
@@ -24,10 +24,9 @@ Dans le détail, il contient :
 #### Séquencement
 
 * Packetage des sources javascript depuis le répertoire `client`, via l'utilitaire [**webpack**](http://webpack.github.io/)
-* Récupération des **.MD** du repo `wiki` dans un répertoire temporaire `tmp_site`
-* Déplacement des **.MD** dans `tmp_site/_include`
+* Récupération des **.MD** du repo `wiki` dans un répertoire temporaire `jekyll-buid`
 * Création de **.html** à la racine (un pour chaque **.MD**) comportant les instructions de conversion de **Markdown** vers **HTML**
-* Ajout de templates header / footer / navigation / style (contenu du répertoire [jekyll-stuff](jekyll-stuff))
+* Ajout de templates header / footer / navigation / style (contenu du répertoire [jekyll](jekyll))
 
 ### Lancement 
 
@@ -35,7 +34,7 @@ Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arbo
 
 ```
 - /client <--- répertoire contenant le projet npm générant les sources client
-- /jekyll-build <--- répertoire git du site statique, ignoré 
+- /jekyll-build <--- répertoire temporaire qui sera utilisé pour générer le site statique
 - /jekyll <--- dossier contenant les templates jekyll
 - /wiki <--- répertoire git contenant le travail collaboratif
 - /scripts <--- contient les scripts utiles au build et déploiemnt  
@@ -43,13 +42,13 @@ Une fois le script lancé **depuis la racine du dépot**, on doit obtenir l'arbo
     - push.sh
 ```
 
-### `push.sh`
+### `scripts/push.sh`
 
 * Instructions **git** permettant le commit sur le dépot du site statique + push des traitements automatiques 
 
-### `deploy_from_travis.sh` 
+### `scripts/travis.sh` 
 
-* L'équivalent de `2_push.sh`, adapté pour un déploiement automatique depuis [Travis-CI](https://travis-ci.org/).
+* Similaire à `push.sh`, adapté pour un déploiement automatique depuis [Travis-CI](https://travis-ci.org/).
 
 ## Développement client
 
@@ -71,24 +70,24 @@ Pour installer npm (debian) :
 `sudo apt-get install npm`  
 
 Pour initialiser les dépendances npm :  
-Depuis la racine du projet `npm update`
+Depuis le répertoire `client`  `npm update`
 
 Pour installer [Grunt](http://gruntjs.com/) :
 `npm install grunt-cli -g`
   
 ### Utilisation
 
-Depuis la racine du projet, différentes commandes Grunt sont disponibles :
+Depuis le répertoire `client` , différentes commandes Grunt sont disponibles :
 
 * `grunt pack` génère le bundle dans `jekyll-stuff/js`
     * `grunt pack:dev` (défaut) : ni optimisation, ni minification
     * `grunt pack:prod` : optimisé et minifié
-* `grunt jkbuild` appelle `1_prepare.sh` puis `jekyll build` depuis `tmp_site`  
+* `grunt jkbuild` appelle `build.sh` puis `jekyll build` depuis `tmp_site`  
 * `grunt jkserve` appelle `jekyll serve` depuis `tmp_site`  
 
 ### Développement par modules
 
-[Une bonne introduction à l'approche par modules en javascript.](http://webpack.github.io/docs/motivation.html)
+[Une bonne introduction aux motivations de l'approche par modules en javascript.](http://webpack.github.io/docs/motivation.html)
 [Les modules ECMAScript 6 expliqués](http://www.2ality.com/2014/09/es6-modules-final.html)
 
 Les sources sont rédigées en [**ECMAScript 6**](http://es6-features.org), qui est en train de devenir le nouveau standard. Elles sont :
