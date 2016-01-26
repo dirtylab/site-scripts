@@ -6,7 +6,8 @@
 
 # execution context agnostic
 cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire courant" ; exit 1)
-
+source_dir=$(pwd)
+# include vars
 . vars.sh
 
 dest_repo="https://$GH_USER:$GH_TOKEN@$GH_REF"

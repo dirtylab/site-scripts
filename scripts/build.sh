@@ -9,6 +9,8 @@
 # assert context in source dir
 cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire courant" ; exit 1)
 
+source_dir=$(pwd)
+
 # include vars
 . vars.sh
 
