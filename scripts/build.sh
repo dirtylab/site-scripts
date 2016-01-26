@@ -33,7 +33,7 @@ shall_build_js_sources="true"
 
 [[ "$shall_build_js_sources" == "true" ]] && {
     cd $npm_dir
-    npm update
+    npm install
     grunt_args=""
     if [ "$1" = "--prod" ]; then
         echo "*** Bundle and minify javascript sources with webpack"
