@@ -8,7 +8,7 @@
 cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire courant" ; exit 1)
 
 source_dir=$(pwd)
-meta_dir="$HOME/.meta/"
+meta_dir="$HOME/.meta"
 last_commit_file="$meta_dir/lastCommit"
 previous_commit=$(cat $last_commit_file)
 
