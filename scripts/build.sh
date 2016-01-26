@@ -16,7 +16,7 @@ source_dir=$(pwd)
 
 bash --version
 
-shall_build_js_sources=true
+shall_build_js_sources="true"
 
 [[ -e "$last_commit_file" ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
     cd "$source_dir/.."
@@ -24,14 +24,14 @@ shall_build_js_sources=true
     # if any, commit between last build and current commit that saw changes in "client" dir
     diff_commit=$(git rev-list -1 $last_commit..$TRAVIS_COMMIT -- "client")
     [[ -z "$diff_commit" ]] && {
-        shall_build_js_source=false
+        shall_build_js_source="false"
         echo "*** Prevented from building js sources as no changes since last build were noticed in client/ dir."
     } || {
         echo "*** Changes detected in client/ dir at commit $diff_commit"
     }
 }
 
-[ "$shall_build_js_source" = "true" ] && {
+[[ "$shall_build_js_source" -eq "true" ]] && {
     cd $npm_dir
     npm update
     if [ "$1" = "--prod" ]; then
@@ -45,7 +45,7 @@ shall_build_js_sources=true
 
 echo "*** Clean/refresh directories"
 
-if [ ! -d "$wiki_repo_dir" ]; then
+if [[ ! -d "$wiki_repo_dir" ]]; then
   echo "*** Create $wiki_repo_dir directory from $wiki_repo_url"
   mkdir $wiki_repo_dir
   cd $wiki_repo_dir
@@ -57,11 +57,11 @@ else
   git pull
 fi
 
-if [ ! -d "$jekyll_tmp_dir" ]; then
+if [[ ! -d "$jekyll_tmp_dir" ]]; then
   mkdir $jekyll_tmp_dir
 else
   # clear content but avoid rm -rf /*
-  if [ -n "$jekyll_tmp_dir" ]; then
+  if [[ -n "$jekyll_tmp_dir" ]]; then
     rm -rf $jekyll_tmp_dir/*
   fi
 fi
@@ -133,7 +133,7 @@ echo "*** Retrieve templates"
 
 cp -r $jekyll_templates_dir/* .
 
-if [ "$1" = "--prod" ]; then
+if [[ "$1" -eq "--prod" ]]; then
   mv _config.yml.prod _config.yml
 else
   mv _config.yml.local _config.yml
