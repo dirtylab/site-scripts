@@ -1,7 +1,7 @@
 .idea
+.build-meta
 lets-play-science
 wiki
 dirtylab.github.io
 jekyll-build
 _site
-node_modules/.bin

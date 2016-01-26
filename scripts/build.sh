@@ -6,32 +6,37 @@
 #       to get .html files then upload them to https://github.com/dirtylab/dirtylab.github.io
 
 # requires PHP 5+ to be installed on the system
-
-# execution context agnostic
+# assert context in source dir
 cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire courant" ; exit 1)
 
-source_dir=$(pwd)
+# include vars
+. vars.sh
 
-# lower-case definitions, not to risk any system-wide env conflict
-wiki_repo_url="https://github.com/dirtylab/wiki"
-wiki_repo_dir="$source_dir/../wiki"
-jekyll_tmp_dir="$source_dir/../jekyll-build"
-jekyll_templates_dir="$source_dir/../jekyll"
-jekyll_includes_dir="_includes"
-jekyll_build_dir="_site"
-npm_dir="$source_dir/../client/"
-fix_script_path="$source_dir/fixlinks.php"
-emojize_script_path="$source_dir/emojize/emojize.php"
+shall_build_js_sources=true
 
+[[ -e $last_commit_file ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
+    cd $root_dir
+    last_commit=$(cat $last_commit_file)
+    # if any, commit between last build and current commit that saw changes in "client" dir
+    diff_commit=$(git rev-list -1 $last_commit..$TRAVIS_COMMIT -- "client")
+    [[ -z "$diff_commit" ]] && {
+        shall_build_js_source=false
+        echo "*** Prevented from building js sources as no changes since last build were noticed in client/ dir."
+    } || {
+        echo "*** Changes detected in client/ dir at commit $diff_commit"
+    }
+}
 
-echo "*** Bundle and minify javascript sources with webpack"
-
-cd $npm_dir
-if [ "$1" = "--prod" ]; then
-    grunt pack:prod
-else
-    grunt pack:dev
-fi
+[ $shall_build_js_source=true ] && {
+    cd $npm_dir
+    if [ "$1" = "--prod" ]; then
+        echo "*** Bundle and minify javascript sources with webpack"
+        grunt pack:prod
+    else
+        echo "*** Bundle javascript sources with webpack"
+        grunt pack:dev
+    fi
+}
 
 echo "*** Clean/refresh directories"
 
