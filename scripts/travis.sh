@@ -42,7 +42,3 @@ git commit -m "commit depuis Travis-CI (build number $TRAVIS_BUILD_NUMBER)"
 git push --force --quiet  origin master > /dev/null 2>&1
 #pour debug
 # git push origin master
-
-# sauvegarde de la référence du dernier commit
-[[ ! -d $meta_dir ]] && mkdir $meta_dir
-echo $TRAVIS_COMMIT > $last_commit_file

@@ -34,15 +34,30 @@ shall_build_js_sources="true"
 [[ "$shall_build_js_source" == "true" ]] && {
     cd $npm_dir
     npm update
+    grunt_args=""
     if [ "$1" = "--prod" ]; then
         echo "*** Bundle and minify javascript sources with webpack"
-        grunt pack:prod
+        grunt_args="pack:prod"
     else
         echo "*** Bundle javascript sources with webpack"
-        grunt pack:dev
+        grunt_args="pack:dev"
     fi
+    grunt $grunt_args
+    # sauvegarde de la référence du dernier commit
+    # ssi le build a marché
+    [[ $? -eq 0 ]] && {
+        [[ ! -d $meta_dir ]] && mkdir $meta_dir
+        echo $TRAVIS_COMMIT > $last_commit_file
+        echo "Sources successfully bundled"
+    } || {
+        echo "could not bundle sources"
+        exit 1
+    }
+} || {
+    echo "No bundle to build."
 }
 
+}
 echo "*** Clean/refresh directories"
 
 if [[ ! -d "$wiki_repo_dir" ]]; then
