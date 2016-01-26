@@ -50,6 +50,7 @@ if [ ! -d "$wiki_repo_dir" ]; then
 else
   echo "*** Using cached dir at : $wiki_repo_dir"
   cd $wiki_repo_dir
+  echo "Working dir : $(pwd)"
   git pull
 fi
 
@@ -62,12 +63,10 @@ else
   fi
 fi
 
-echo
 cp -r $wiki_repo_dir/* $jekyll_tmp_dir
 
 cd $jekyll_tmp_dir && rm -rf .git
 
-pwd
 echo '*** Remove <a name="hi"></a> anchor at top of README.MD to avoid a CSS issue'
 
 sed -i.bak -e 's/<a name="hi"><\/a>//g' README.MD
