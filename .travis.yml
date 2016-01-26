@@ -26,4 +26,6 @@ branches:
 
 cache:
   directories:
-    - client/node_modules
+    - "client/node_modules"
+    - "wiki"
+    - "dirtylab.github.io"
