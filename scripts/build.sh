@@ -31,7 +31,7 @@ shall_build_js_sources=true
     }
 }
 
-[ "$shall_build_js_source" = true ] && {
+[ "$shall_build_js_source" = "true" ] && {
     cd $npm_dir
     npm update
     if [ "$1" = "--prod" ]; then
