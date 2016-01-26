@@ -17,8 +17,8 @@ if [ ! -d "$dest_dir" ]; then
   echo "*** Create $dest_dir directory"
   mkdir $dest_dir
   cd $dest_dir
-  pwd
-  git clone $dest_repo .
+  git init
+  git remote add origin $dest_repo
 else
   cd $dest_dir
 fi
