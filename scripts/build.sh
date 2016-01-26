@@ -37,7 +37,9 @@ echo "*** Clean/refresh directories"
 
 if [ ! -d "$wiki_repo_dir" ]; then
   echo "*** Create $DEST_DIR directory from $wiki_repo_url"
-  git clone $wiki_repo_url
+  mkdir $wiki_repo_dir
+  cd $wiki_repo_dir
+  git clone $wiki_repo_url .
 else
   cd $wiki_repo_dir
   git pull

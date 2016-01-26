@@ -38,10 +38,8 @@ git config user.email "$GH_EMAIL"
 
 git add -A .
 
-pwd
-
 git commit -m "commit depuis Travis-CI (build number $TRAVIS_BUILD_NUMBER)"
 
-# git push --force --quiet  origin master > /dev/null 2>&1
+git push --force --quiet  origin master > /dev/null 2>&1
 #pour debug
-git push origin master
+# git push origin master
