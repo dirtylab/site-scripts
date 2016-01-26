@@ -28,4 +28,3 @@ cache:
   directories:
     - "client/node_modules"
     - "wiki"
-    - "dirtylab.github.io"
