@@ -16,6 +16,7 @@ shall_build_js_sources=true
 
 [[ -e $last_commit_file ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
     cd $root_dir
+    pwd
     last_commit=$(cat $last_commit_file)
     # if any, commit between last build and current commit that saw changes in "client" dir
     diff_commit=$(git rev-list -1 $last_commit..$TRAVIS_COMMIT -- "client")
