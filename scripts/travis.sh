@@ -8,10 +8,15 @@
 cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire courant" ; exit 1)
 
 source_dir=$(pwd)
+meta_dir="$HOME/.meta/"
+last_commit_file="$meta_dir/lastCommit"
+previous_commit=$(cat $last_commit_file)
 
 tmp_dir="$source_dir/../jekyll-build"
 dest_repo="https://$GH_USER:$GH_TOKEN@$GH_REF"
 dest_dir="$source_dir/../dirtylab.github.io"
+
+echo "Build précédent sur commit $previous_commit"
 
 if [ ! -d "$dest_dir" ]; then
   echo "*** Create $dest_dir directory"
@@ -45,7 +50,5 @@ git push --force --quiet  origin master > /dev/null 2>&1
 # git push origin master
 
 # sauvegarde de la référence du dernier commit
-if [ ! -d $HOME/.meta/ ]; then
-    mkdir $HOME/.meta
-fi
-echo $TRAVIS_COMMIT > $HOME/.meta/lastCommit
+[[ ! -d $meta_dir ]] && mkdir $meta_dir
+echo $TRAVIS_COMMIT > $last_commit_file
