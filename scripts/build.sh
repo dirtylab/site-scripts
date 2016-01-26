@@ -11,26 +11,29 @@
 cd "${BASH_SOURCE%/*}" || (echo "FAILURE: impossible de trouver le répertoire courant" ; exit 1)
 
 source_dir=$(pwd)
-
+root_dir=$("../",$source_dir)
 # lower-case definitions, not to risk any system-wide env conflict
 wiki_repo_url="https://github.com/dirtylab/wiki"
 wiki_repo_dir="$source_dir/../wiki"
-jekyll_tmp_dir="$source_dir/../jekyll-build"
-jekyll_templates_dir="$source_dir/../jekyll"
+jekyll_tmp_dir="$root_dir/jekyll-build"
+jekyll_templates_dir="$root_dir/jekyll"
 jekyll_includes_dir="_includes"
 jekyll_build_dir="_site"
-npm_dir="$source_dir/../client/"
+npm_dir="$root_dir/client/"
 fix_script_path="$source_dir/fixlinks.php"
 emojize_script_path="$source_dir/emojize/emojize.php"
 
 
 echo "*** Bundle and minify javascript sources with webpack"
 
-cd $npm_dir
-if [ "$1" = "--prod" ]; then
-    grunt pack:prod
-else
-    grunt pack:dev
+# build only if diff was found between the last two commits on client/ dir
+if [[ -z $(git diff HEAD~1 ./client) ]]; then
+    cd $npm_dir
+    if [ "$1" = "--prod" ]; then
+        grunt pack:prod
+    else
+        grunt pack:dev
+    fi
 fi
 
 echo "*** Clean/refresh directories"
