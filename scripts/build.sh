@@ -31,7 +31,7 @@ shall_build_js_sources="true"
     }
 }
 
-[[ "$shall_build_js_source" == "true" ]] && {
+[[ "$shall_build_js_sources" == "true" ]] && {
     cd $npm_dir
     npm update
     grunt_args=""
@@ -54,7 +54,7 @@ shall_build_js_sources="true"
         exit 1
     }
 } || {
-    echo "No bundle to build. $shall_build_js_source"
+    echo "No bundle to build."
 }
 
 echo "*** Clean/refresh directories"
