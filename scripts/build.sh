@@ -24,7 +24,7 @@ shall_build_js_sources="true"
     # if any, commit between last build and current commit that saw changes in "client" dir
     diff_commit=$(git rev-list -1 $last_commit..$TRAVIS_COMMIT -- "client")
     [[ -z "$diff_commit" ]] && {
-        shall_build_js_source="false"
+        shall_build_js_sources="false"
         echo "*** Prevented from building js sources as no changes since last build were noticed in client/ dir."
     } || {
         echo "*** Changes detected in client/ dir at commit $diff_commit"
