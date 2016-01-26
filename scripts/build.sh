@@ -54,7 +54,7 @@ shall_build_js_sources="true"
         exit 1
     }
 } || {
-    echo "No bundle to build."
+    echo "No bundle to build. $shall_build_js_source"
 }
 
 echo "*** Clean/refresh directories"
