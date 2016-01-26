@@ -27,6 +27,5 @@ branches:
 cache:
   directories:
     - "client/node_modules"
-    - "wiki"
     - ".build-meta"
     - "jekyll/js"
