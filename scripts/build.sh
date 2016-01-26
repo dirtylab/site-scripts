@@ -57,7 +57,6 @@ shall_build_js_sources="true"
     echo "No bundle to build."
 }
 
-}
 echo "*** Clean/refresh directories"
 
 if [[ ! -d "$wiki_repo_dir" ]]; then
