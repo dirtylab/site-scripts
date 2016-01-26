@@ -31,7 +31,7 @@ shall_build_js_sources="true"
     }
 }
 
-[[ "$shall_build_js_source" -eq "true" ]] && {
+[[ "$shall_build_js_source" == "true" ]] && {
     cd $npm_dir
     npm update
     if [ "$1" = "--prod" ]; then
@@ -133,7 +133,7 @@ echo "*** Retrieve templates"
 
 cp -r $jekyll_templates_dir/* .
 
-if [[ "$1" -eq "--prod" ]]; then
+if [[ "$1" == "--prod" ]]; then
   mv _config.yml.prod _config.yml
 else
   mv _config.yml.local _config.yml
