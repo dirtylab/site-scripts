@@ -18,7 +18,6 @@ shall_build_js_sources=true
 
 [[ -e $last_commit_file ]] && [[ -n "$TRAVIS_COMMIT" ]] && {
     cd "$source_dir/.."
-    pwd
     last_commit=$(cat $last_commit_file)
     # if any, commit between last build and current commit that saw changes in "client" dir
     diff_commit=$(git rev-list -1 $last_commit..$TRAVIS_COMMIT -- "client")
@@ -44,11 +43,12 @@ shall_build_js_sources=true
 echo "*** Clean/refresh directories"
 
 if [ ! -d "$wiki_repo_dir" ]; then
-  echo "*** Create $DEST_DIR directory from $wiki_repo_url"
+  echo "*** Create $wiki_repo_dir directory from $wiki_repo_url"
   mkdir $wiki_repo_dir
   cd $wiki_repo_dir
   git clone $wiki_repo_url .
 else
+  echo "*** Using cached dir at : $wiki_repo_dir"
   cd $wiki_repo_dir
   git pull
 fi
@@ -62,11 +62,12 @@ else
   fi
 fi
 
+echo
 cp -r $wiki_repo_dir/* $jekyll_tmp_dir
 
 cd $jekyll_tmp_dir && rm -rf .git
 
-
+pwd
 echo '*** Remove <a name="hi"></a> anchor at top of README.MD to avoid a CSS issue'
 
 sed -i.bak -e 's/<a name="hi"><\/a>//g' README.MD
@@ -139,5 +140,3 @@ fi
 echo "*** Add navigation array to _config.yml"
 
 echo "$STR_NAV" >> _config.yml
-
-cd $source_dir

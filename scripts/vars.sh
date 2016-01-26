@@ -1,7 +1,6 @@
 #!/bin/bash
 # lower-case definitions, not to risk any system-wide env conflict
 
-root_dir=$(cd $source_dir/..)
 # wiki
 wiki_repo_url="https://github.com/dirtylab/wiki"
 wiki_repo_dir="$source_dir/../wiki"
