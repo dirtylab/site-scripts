@@ -23,3 +23,7 @@ env:
 branches:
   only:
     - master
+
+cache:
+  directories:
+    - client/node_modules
